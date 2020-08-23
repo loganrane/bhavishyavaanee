@@ -1,2 +1,2 @@
-# bhavishyavaanee
- भविष्यवाणी - A curated list of all the simple Data Science Projects
+# भविष्यवाणी (Prediction)
+A curated list of Data Science Projects implementing various Machine Learning, Deep Learning and Data Analysis methods.
