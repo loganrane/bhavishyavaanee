@@ -1,6 +1,6 @@
 # Web Dashboard - US Airlines Tweets Sentiment Analysis
 
-> The deployed dashboard can be viewed [here](https://github.com/ArpitFalcon/).
+> The deployed dashboard can be viewed [here](https://dashboard-us-twitter-sentiment.herokuapp.com).
 
 I have made a web dashboard to analyze the data of tweets done by people on various US Airline Services. After analyzing the data, we can interpret results than can be used by different companies to improve their services for customer satisfaction.
 
