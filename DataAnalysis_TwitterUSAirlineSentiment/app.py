@@ -18,7 +18,7 @@ st.sidebar.markdown(
 
 
 # Importing the data
-DATA_PATH = ('./Tweets.csv')
+DATA_PATH = ('./data/Tweets.csv')
 
 # Cache the data returned by this function to save computational costs
 
@@ -62,8 +62,8 @@ if not st.sidebar.checkbox('Hide', True):
         st.plotly_chart(fig)
 
 
-Add map to visualize the when and where of the tweets
-Create the data
+# Add map to visualize the when and where of the tweets
+# Create the data
 st.sidebar.subheader('When and Where are users tweeting from?')
 hour = st.sidebar.slider('Hour of day', 0, 23)
 modified_data = data[data['tweet_created'].dt.hour == hour]
