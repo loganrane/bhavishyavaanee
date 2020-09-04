@@ -6,12 +6,14 @@ import plotly.express as px
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
+
 # Adding exploratory information for the dashboard
 st.title('Sentiment Analysis fo Tweets about US Airlines')
 st.sidebar.title('Sentiment Analysis fo Tweets about US Airlines')
 
 st.markdown('This application is a Streamlit dashboard to analyze the sentiment of Tweets. 🐦')
 st.sidebar.markdown('This application is a Streamlit dashboard to analyze the sentiment of Tweets. 🐦')
+
 
 # Importing the data
 DATA_PATH = ('./Tweets.csv')
@@ -25,6 +27,7 @@ def load_data(DATA_URL):
 
 data = load_data(DATA_PATH)
 
+
 # Add display random tweets as sentiment.
 st.sidebar.subheader('Show random Tweet')
 random_tweet = st.sidebar.radio('Sentiment', ('positive', 'neutral', 'negative'))
@@ -32,6 +35,7 @@ st.sidebar.markdown(data.query('airline_sentiment == @random_tweet')[['text']].s
 
 st.sidebar.markdown('### Number of tweets by sentiment')
 select = st.sidebar.selectbox('Visualization Type', ['Histogram', 'Pie Chart'], key='1')
+
 
 # Create dataframe to plot the graphs
 sentiment_count = data['airline_sentiment'].value_counts()
@@ -79,4 +83,19 @@ if len(choice) > 0:
     st.plotly_chart(fig_choice)
 
 
+# Making wordcloud of the tweets by sentiment
+st.sidebar.header('Word Cloud')
+word_sentiment = st.sidebar.radio('Display word cloud for what sentiment?', ('positive', 'neutral', 'negative'))
+
+# Create and display the wordcloud
+if not st.sidebar.checkbox('Close', False, key='3'):
+    st.header('Word Cloud for %s'%(word_sentiment))
+    df = data[data['airline_sentiment'] == word_sentiment]
+    words = ' '.join(df['text'])
+    processed_words = ' '.join([word for word in words.split() if 'http' not in word and not word.startswith('@') and word != 'RT'])
+    wordcloud = WordCloud(stopwords=STOPWORDS, background_color='white', height=640, width=800).generate(processed_words)
+    plt.imshow(wordcloud)
+    plt.xticks([])
+    plt.yticks([])
+    st.pyplot()
 
