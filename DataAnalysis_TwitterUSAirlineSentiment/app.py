@@ -3,6 +3,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+from wordcloud import WordCloud, STOPWORDS
+import matplotlib.pyplot as plt
 
 # Adding exploratory information for the dashboard
 st.title('Sentiment Analysis fo Tweets about US Airlines')
@@ -65,6 +67,16 @@ if not st.sidebar.checkbox('Hide', True):
 
 # -------------------------------------------------------------- #
 
+
+# Add graphs for breakdown of airline tweets by sentiment. 
+st.sidebar.subheader('Breakdown airline tweets by sentiment')
+choice = st.sidebar.multiselect('Pick Airlines', ('US Airways', 'United', 'American', 'Southwest', 'Delta', 'Virgin America'), key='0')
+
+if len(choice) > 0:
+    choice_data = data[data.airline.isin(choice)]
+    fig_choice = px.histogram(choice_data, x='airline', y='airline_sentiment', histfunc='count', color='airline_sentiment',
+                              facet_col='airline_sentiment', labels={'airline_sentiment': 'tweets'}, height=600, width=800)
+    st.plotly_chart(fig_choice)
 
 
 
