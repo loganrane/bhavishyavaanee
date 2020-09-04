@@ -10,6 +10,7 @@ I have made a web dashboard to analyze the data of tweets done by people on vari
   </a>
 </div>
 
+
 ### Libraries Used -
 
 - Front End - [Streamlit](https://www.streamlit.io/)
@@ -23,4 +24,8 @@ I have made a web dashboard to analyze the data of tweets done by people on vari
 - Heroku
 
 ### Insights / Results -
-- 
+
+- The dataset is mostly dominated by negative sentiment.
+- Most of the negative tweets are about the delay of flights, followed by missing baggages.
+- The location from where tweets are sent is divided into 3 clusters.
+- We can infer that 'Delta' provides the services among the 6 airline service company we analyzed.
