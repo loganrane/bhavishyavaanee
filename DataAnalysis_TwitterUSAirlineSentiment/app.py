@@ -21,3 +21,8 @@ def load_data(DATA_URL):
     return data
 
 data = load_data(DATA_PATH)
+
+# Add display random tweets as sentiment.
+st.sidebar.subheader('Show random Tweet')
+random_tweet = st.sidebar.radio('Sentiment', ('positive', 'neutral', 'negative'))
+st.sidebar.markdown(data.query('airline_sentiment == @random_tweet')[['text']].sample(n=1).iat[0, 0])
