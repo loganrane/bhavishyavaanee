@@ -45,15 +45,26 @@ if not st.sidebar.checkbox('Hide', True):
         fig = px.pie(sentiment_count, values='Tweets', names='Sentiment')
         st.plotly_chart(fig)
 
+
+# -------------------------------------------------------------- #
+# ----------- Missing Columns (Latitude and Longitude) --------- #
+# -------------------------------------------------------------- #
+
 # Add map to visualize the when and where of the tweets
 # Create the data
-st.sidebar.subheader('When and Where are users tweeting from?')
-hour = st.sidebar.slider('Hour of day', 0, 23)
-modified_data = data[data['tweet_created'].dt.hour == hour]
-# Add the plot
-if not st.sidebar.checkbox('Close', True, key='1'):
-    st.markdown('### Tweets locations based on the time of day')
-    st.markdown('%i tweets between %i:00 and %i:00'%(len(modified_data), hour, ((hour+1) % 24)))
-    st.map(modified_data)
-    if st.sidebar.checkbox('Show raw data', False):
-        st.write(modified_data)
+# st.sidebar.subheader('When and Where are users tweeting from?')
+# hour = st.sidebar.slider('Hour of day', 0, 23)
+# modified_data = data[data['tweet_created'].dt.hour == hour]
+# # Add the plot
+# if not st.sidebar.checkbox('Close', True, key='1'):
+#     st.markdown('### Tweets locations based on the time of day')
+#     st.markdown('%i tweets between %i:00 and %i:00'%(len(modified_data), hour, ((hour+1) % 24)))
+#     st.map(modified_data)
+#     if st.sidebar.checkbox('Show raw data', False):
+#         st.write(modified_data)
+
+# -------------------------------------------------------------- #
+
+
+
+
