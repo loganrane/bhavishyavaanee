@@ -6,7 +6,7 @@ I have made a web dashboard to analyze the data of tweets done by people on vari
 
 <div align="center">
   <a href="https://arpitfalcon.github.io/">
-    <img alt="demo" src="" width=100% />
+    <img alt="demo" src="https://github.com/ArpitFalcon/bhavishyavaanee/blob/master/DataAnalysis_TwitterUSAirlineSentiment/data/demo.png" width=80% />
   </a>
 </div>
 
