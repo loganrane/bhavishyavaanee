@@ -15,10 +15,10 @@ def fetch_dataset(url=HOUSING_URL, path=HOUSING_PATH):
     os.makedirs(path, exist_ok=True)
     
     #Download
-    tgz_path = os.path.join(path, 'housing/tgz')
-    urllib.requrest.urlretrieve(url, tgz_path)
+    tgz_path = os.path.join(path, 'housing.tgz')
+    urllib.request.urlretrieve(url, tgz_path)
     
     # Extract
     tgz_file = tarfile.open(tgz_path)
     tgz_file.extractall(path=path)
-    tgz_file.close() 
+    tgz_file.close()
