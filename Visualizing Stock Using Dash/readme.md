@@ -1,3 +1,5 @@
-<H1>Visualizing Stock Using Dash
+<H1>Visualizing Stock Using Dash>
 
->Will be updated soon
+
+
+Readme file will be updated soon
